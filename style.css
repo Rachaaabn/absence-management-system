@@ -1,0 +1,58 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 40px;
+  background: #f8f9fa;
+}
+
+h1 {
+  color: #2c3e50;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse; /* تأكد من دمج الحدود */
+  background: #fff;
+  border: 3px solid #000000; /* حد خارجي للجدول */
+}
+
+th, td {
+  text-align: center;
+  padding: 5px;
+  border: 2px solid #911919; /* حد لكل خلية */
+  transition: background-color 0.2s;
+}
+
+
+.error {
+  color: red;
+  font-size: 12px;
+}
+
+button {
+  background-color: #2ecc71;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #27ae60;
+}
+
+#reportSection {
+  background: #fff;
+  border-radius: 10px;
+  padding: 15px;
+  margin-top: 20px;
+  width: 60%;
+}
+
+#searchInput {
+  padding: 6px;
+  width: 250px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}

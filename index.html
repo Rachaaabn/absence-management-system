@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Absence Management System</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <h1>Absence Management System</h1>
+
+  <!-- ===== Search Bar ===== -->
+  <div id="searchSection">
+    <label for="searchInput">🔍 Search Student:</label>
+    <input type="text" id="searchInput" placeholder="Enter first or last name..." />
+  </div>
+
+  <!-- ===== Attendance Table ===== -->
+  <h2>Attendance Table</h2>
+  <table id="attendanceTable" border="1">
+    <thead>
+      <tr>
+        <th>Last Name</th>
+        <th>First Name</th>
+        <th colspan="6">Sessions (S1–S6)</th>
+        <th colspan="6">Participation (P1–P6)</th>
+        <th>Absences</th>
+        <th>Participation Count</th>
+        <th>Message</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>Ahmed</td>
+        <td>Sara</td>
+        <td>✓</td><td></td><td>✓</td><td></td><td>✓</td><td></td>
+        <td>✓</td><td></td><td></td><td>✓</td><td></td><td>✓</td>
+        <td></td><td></td><td></td>
+      </tr>
+
+      <tr>
+        <td>Yacine</td>
+        <td>Ali</td>
+        <td></td><td>✓</td><td>✓</td><td>✓</td><td></td><td>✓</td>
+        <td>✓</td><td></td><td>✓</td><td></td><td>✓</td><td></td>
+        <td></td><td></td><td></td>
+      </tr>
+
+      <tr>
+        <td>Houcine</td>
+        <td>Rania</td>
+        <td>✓</td><td></td><td></td><td>✓</td><td></td><td></td>
+        <td>✓</td><td>✓</td><td></td><td></td><td>✓</td><td></td>
+        <td></td><td></td><td></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br>
+
+  <!-- ===== EXERCISE 6 BUTTONS ===== -->
+  <button id="highlightExcellent">Highlight Excellent Students</button>
+  <button id="resetColors">Reset Colors</button>
+
+  <br><br>
+
+  <!-- ===== EXERCISE 7 BUTTONS ===== -->
+  <button id="sortAbs">Sort by Absences (Ascending)</button>
+  <button id="sortPart">Sort by Participation (Descending)</button>
+  <p id="sortMessage"></p>
+
+  <br><br>
+
+  <!-- ===== Add Student Form ===== -->
+  <h2>Add Student</h2>
+  <form id="studentForm">
+    <label>Student ID:</label>
+    <input type="text" id="studentID"> <span class="error" id="idError"></span><br>
+
+    <label>Last Name:</label>
+    <input type="text" id="lastName"> <span class="error" id="lastError"></span><br>
+
+    <label>First Name:</label>
+    <input type="text" id="firstName"> <span class="error" id="firstError"></span><br>
+
+    <label>Email:</label>
+    <input type="text" id="email"> <span class="error" id="emailError"></span><br>
+
+    <button type="submit">Add Student</button>
+  </form>
+
+  <br>
+
+  <!-- ===== Report Section ===== -->
+  <button id="showReport">Show Report</button>
+
+  <div id="reportSection">
+    <h3>Attendance Report</h3>
+    <p id="totalStudents"></p>
+    <p id="presentCount"></p>
+    <p id="participatedCount"></p>
+    <canvas id="reportChart" width="400" height="200"></canvas>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
