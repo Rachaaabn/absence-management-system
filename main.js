@@ -21,10 +21,10 @@ $(document).ready(function () {
 <tr>
   <td>${last}</td>
   <td>${first}</td>
-  <td></td><td></td><td></td><td></td><td></td><td></td> <!-- 6 حضور -->
-  <td></td><td></td><td></td><td></td><td></td><td></td> <!-- 6 مشاركة -->
-  <td>0</td> <!-- غياب -->
-  <td>0</td> <!-- مشاركة -->
+  <td></td><td></td><td></td><td></td><td></td><td></td> 
+  <td></td><td></td><td></td><td></td><td></td><td></td> 
+  <td>0</td> 
+  <td>0</td> 
   <td>New student added</td>
 </tr>`;
 
