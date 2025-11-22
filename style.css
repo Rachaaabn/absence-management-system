@@ -10,15 +10,15 @@ h1 {
 
 table {
   width: 100%;
-  border-collapse: collapse; /* تأكد من دمج الحدود */
+  border-collapse: collapse; 
   background: #fff;
-  border: 3px solid #000000; /* حد خارجي للجدول */
+  border: 3px solid #000000; 
 }
 
 th, td {
   text-align: center;
   padding: 5px;
-  border: 2px solid #911919; /* حد لكل خلية */
+  border: 2px solid #911919; 
   transition: background-color 0.2s;
 }
 
