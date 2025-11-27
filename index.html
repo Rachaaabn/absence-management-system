@@ -61,17 +61,17 @@
 
   <br>
 
-  <!-- ===== EXERCISE 6 BUTTONS ===== -->
-  <button id="highlightExcellent">Highlight Excellent Students</button>
-  <button id="resetColors">Reset Colors</button>
+  <div class="button-row">
+  <div class="left-buttons">
+    <button id="highlightExcellent">Highlight Excellent Students</button>
+    <button id="resetColors">Reset Colors</button>
+  </div>
 
-  <br><br>
-
-  <!-- ===== EXERCISE 7 BUTTONS ===== -->
-  <button id="sortAbs">Sort by Absences (Ascending)</button>
-  <button id="sortPart">Sort by Participation (Descending)</button>
-  <p id="sortMessage"></p>
-
+  <div class="right-buttons">
+    <button id="sortAbs">Sort by Absences (Ascending)</button>
+    <button id="sortPart">Sort by Participation (Descending)</button>
+  </div>
+</div>  <p id="sortMessage"></p>
   <br><br>
 
   <!-- ===== Add Student Form ===== -->
@@ -92,18 +92,19 @@
     <button type="submit">Add Student</button>
   </form>
 
-  <br>
+  <br><br><br><br>
 
   <!-- ===== Report Section ===== -->
   <button id="showReport">Show Report</button>
 
-  <div id="reportSection">
-    <h3>Attendance Report</h3>
-    <p id="totalStudents"></p>
-    <p id="presentCount"></p>
-    <p id="participatedCount"></p>
-    <canvas id="reportChart" width="400" height="200"></canvas>
-  </div>
+<div id="reportSection">
+  <p id="totalStudents"></p>
+  <p id="presentCount"></p>
+  <p id="participatedCount"></p> <br>
+  <canvas id="pieChart" ></canvas>
+
+</div>
+
 
   <script src="js/main.js"></script>
 </body>
