@@ -132,45 +132,57 @@ $(document).ready(function () {
     });
 
     // ===================== REPORT (Exercise 4) =====================
-    $("#showReport").click(function () {
-        const rows = $("#attendanceTable tbody tr:visible");
-        const total = rows.length;
+    let pieChart = null;
+   $("#showReport").click(function () {
+    const rows = $("#attendanceTable tbody tr:visible");
+    const total = rows.length;
 
-        let present = 0, participated = 0;
+    let present = 0;
+    let participated = 0;
 
-        rows.each(function () {
-            if ($(this).find("td").slice(2, 8).filter((i, td) => $(td).text() === "✓").length > 0)
-                present++;
+    rows.each(function () {
+        const cells = $(this).find("td");
 
-            if ($(this).find("td").slice(8, 14).filter((i, td) => $(td).text() === "✓").length > 0)
-                participated++;
-        });
+        if (cells.slice(2, 8).filter((i, td) => $(td).text().trim() === "✓").length > 0)
+            present++;
 
-        $("#totalStudents").text(`Total Students: ${total}`);
-        $("#presentCount").text(`Present: ${present}`);
-        $("#participatedCount").text(`Participated: ${participated}`);
-
-        const ctx = $("#reportChart")[0].getContext("2d");
-
-        if (window.reportChart) window.reportChart.destroy();
-
-        window.reportChart = new Chart(ctx, {
-            type: "bar",
-            data: {
-                labels: ["Total", "Present", "Participated"],
-                datasets: [{
-                    label: "Attendance Report",
-                    data: [total, present, participated],
-                    backgroundColor: ["#3498db", "#2ecc71", "#f1c40f"]
-                }]
-            },
-            options: {
-                scales: {
-                    y: { beginAtZero: true }
-                }
-            }
-        });
+        if (cells.slice(8, 14).filter((i, td) => $(td).text().trim() === "✓").length > 0)
+            participated++;
     });
+
+    const absent = total - present;
+
+    $("#totalStudents").text(`Total Students: ${total}`);
+    $("#presentCount").text(`Present: ${present}`);
+    $("#participatedCount").text(`Participated: ${participated}`);
+
+    const ctx = document.getElementById("pieChart").getContext("2d");
+
+    // Destroy previous chart safely
+    if (pieChart) {
+        pieChart.destroy();
+    }
+
+    // Create new chart
+    pieChart = new Chart(ctx, {
+        type: "pie",
+        data: {
+            labels: ["Present", "Participated"],
+            datasets: [{
+                data: [present, participated],
+                backgroundColor: ["#2ecc71", "#f1c40f"]
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: { legend: { position: "bottom" } }
+        }
+    });
+});
+
+
+
+
 
     // ===================== EXERCISE 5: HOVER & CLICK =====================
     // Highlight row on mouse hover
