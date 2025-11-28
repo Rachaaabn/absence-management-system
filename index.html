@@ -11,14 +11,28 @@
 
   <h1>Absence Management System</h1>
 
-  <!-- ===== Search Bar ===== -->
-  <div id="searchSection">
-    <label for="searchInput">🔍 Search Student:</label>
-    <input type="text" id="searchInput" placeholder="Enter first or last name..." />
-  </div>
+   <!-- ===== Navigation Bar ===== -->
+  <nav class="navbar">
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#attendancetable">Attendance List</a></li>
+    <li><a href="#studentform">Add Student</a></li>
+    <li><a href="#showReport">Reports</a></li>
+    <li><a href="logout.php">Logout</a></li>
+  </ul>
+</nav><br>
+
+  
+
 
   <!-- ===== Attendance Table ===== -->
-  <h2>Attendance Table</h2>
+  <h2  id="attendancetable">Attendance Table</h2>
+  <!-- ===== Search Bar ===== -->
+  <div id="searchSection">
+    <label for="searchInput">Search Student:</label>
+    <input type="text" id="searchInput" placeholder="Enter first or last name..." />
+  </div>
+  <br>
   <table id="attendanceTable" border="1">
     <thead>
       <tr>
@@ -34,24 +48,24 @@
 
     <tbody>
       <tr>
-        <td>Ahmed</td>
-        <td>Sara</td>
+        <td>Bounoua</td>
+        <td>Ryma Racha</td>
         <td>✓</td><td></td><td>✓</td><td></td><td>✓</td><td></td>
         <td>✓</td><td></td><td></td><td>✓</td><td></td><td>✓</td>
         <td></td><td></td><td></td>
       </tr>
 
       <tr>
-        <td>Yacine</td>
-        <td>Ali</td>
+        <td>Rahal</td>
+        <td>Romaissa</td>
         <td></td><td>✓</td><td>✓</td><td>✓</td><td></td><td>✓</td>
         <td>✓</td><td></td><td>✓</td><td></td><td>✓</td><td></td>
         <td></td><td></td><td></td>
       </tr>
 
       <tr>
-        <td>Houcine</td>
-        <td>Rania</td>
+        <td>Boukais</td>
+        <td>Fella Mordjan</td>
         <td>✓</td><td></td><td></td><td>✓</td><td></td><td></td>
         <td>✓</td><td>✓</td><td></td><td></td><td>✓</td><td></td>
         <td></td><td></td><td></td>
@@ -66,16 +80,19 @@
     <button id="highlightExcellent">Highlight Excellent Students</button>
     <button id="resetColors">Reset Colors</button>
   </div>
+  
 
   <div class="right-buttons">
     <button id="sortAbs">Sort by Absences (Ascending)</button>
     <button id="sortPart">Sort by Participation (Descending)</button>
   </div>
-</div>  <p id="sortMessage"></p>
+  </div>  <p id="sortMessage"></p>
+  
+
   <br><br>
 
   <!-- ===== Add Student Form ===== -->
-  <h2>Add Student</h2>
+  <h2   id="studentform">Add Student</h2>
   <form id="studentForm">
     <label>Student ID:</label>
     <input type="text" id="studentID"> <span class="error" id="idError"></span><br>
@@ -95,6 +112,7 @@
   <br><br><br><br>
 
   <!-- ===== Report Section ===== -->
+  
   <button id="showReport">Show Report</button>
 
 <div id="reportSection">
@@ -108,4 +126,6 @@
 
   <script src="js/main.js"></script>
 </body>
+
+
 </html>
